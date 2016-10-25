@@ -45,6 +45,6 @@ node default {
   include role::
   exec { '/etc/motd':
     path    => '/usr/bin',
-    creates => "cowsay 'Welcome to ${::fqdn}!' > /etc/motd",
+    creates => "cowsay 'Welcome to alanopp' > /etc/motd",
   }
 }
