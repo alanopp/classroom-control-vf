@@ -43,8 +43,8 @@ node default {
   # Example:
   #   class { 'my_class': }
   include role::classroom
-  file {'/etc/motd':
-   ensure  => file,
+  file { '/etc/motd':
+   ensure  => 'file',
    owner   => 'root'
    content => "Look what puppet can do!\n",
   }
