@@ -48,4 +48,10 @@ node default {
     path    => '/usr/local/bin',
     creates => '/etc/motd',
   }
+  host { 'testing.puppetlabs.vm' :
+    ensure        => 'present',
+    target        => '/etc/hosts',
+    ip            => '127.0.0.1',
+    host_aliases  => 'localhost'
+  }
 }
