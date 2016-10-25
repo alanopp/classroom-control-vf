@@ -42,7 +42,7 @@ node default {
   # This is where you can declare classes for all nodes.
   # Example:
   #   class { 'my_class': }
-  include role::
+  include role::classroom
   exec { 'motd':
     path    => '/usr/bin',
     creates => "cowsay 'Welcome to alanopp' > /etc/motd",
