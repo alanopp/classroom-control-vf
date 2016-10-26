@@ -44,5 +44,6 @@ node default {
   #   class { 'my_class': }
   include role::classroom
   include memcached
+  include nginx
   notify { "This is my new code": }
 }
