@@ -1,4 +1,4 @@
-# memcached/init/init.pp
+# memcached/init.pp
 class memcached {
 package { 'memcached':
   ensure => present,
