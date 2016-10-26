@@ -7,7 +7,7 @@ class skeleton {
     owner  => '0',
   }
   file {'/etc/skel/.bashrc':
-    ensure => 'file'
+    ensure  => 'file'
     group   => '0',
     mode    => '0644',
     owner   => '0',
