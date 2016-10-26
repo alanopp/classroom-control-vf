@@ -2,16 +2,15 @@
 class skeleton {
   file { '/etc/skel':
     ensure => 'directory',
-    group  => 'root',
+    group  => '0',
     mode   => '0755',
-    owner  => 'root',
+    owner  => '0',
   }
   file {'/etc/skel/.bashrc':
     ensure => 'file'
-    group   => 'root',
+    group   => '0',
     mode    => '0644',
-    owner   => 'root',
-    type    => 'file',
+    owner   => '0',
     source  => 'puppet:///modules/skeleton/bashrc',
   }
 }
