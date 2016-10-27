@@ -45,7 +45,7 @@ node default {
   include role::classroom
   include memcached
   include nginx
-  include users
+  include users::admins
 
   notify { "This is my new code": }
 }
