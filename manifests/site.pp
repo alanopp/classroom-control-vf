@@ -45,12 +45,7 @@ node default {
   include role::classroom
   include memcached
   include nginx
-  include aliases
-  
-  if $::virtual != 'physical' {
-    $vmname = capitalize($::virtual)
-    notify { "This is a ${vmname} virtual machine.": }
-  }
+  include users
 
   notify { "This is my new code": }
 }
