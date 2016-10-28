@@ -52,6 +52,8 @@ node default {
   notify { $message: }
   class { 'users::admins': }
   include ::epel
- 
+  include ::apache
+  include ::mysql
+  include ::wordpress
   #notify { "This is my new code": }
 }
