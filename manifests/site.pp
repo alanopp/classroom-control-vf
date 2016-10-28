@@ -42,12 +42,12 @@ node default {
   # This is where you can declare classes for all nodes.
   # Example:
   #   class { 'my_class': }
-  include role::classroom
+  #include role::classroom
   include memcached
   include nginx
   $message = hiera('message')
   notify { $message: }
   class { 'users::admins': }
  
-  notify { "This is my new code": }
+  #notify { "This is my new code": }
 }
