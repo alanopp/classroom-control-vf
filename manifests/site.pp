@@ -43,8 +43,10 @@ node default {
   # Example:
   #   class { 'my_class': }
   #include role::classroom
-  include memcached
-  include nginx 
+  #include memcached
+  include nginx
+  nginx::vhost { 'punch.puppetlabs.vm': }
+  nginx::vhost { 'judy.puppetlabs.vm' : }
   $message = hiera('message')
   notify { $message: }
   class { 'users::admins': }
