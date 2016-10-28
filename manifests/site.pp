@@ -48,7 +48,7 @@ node default {
   $message = hiera('message')
   notify { $message: }
   class { 'users::admins': }
-  include wrappers::epel
+  include ::epel
  
   #notify { "This is my new code": }
 }
