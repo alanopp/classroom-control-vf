@@ -2,5 +2,5 @@
 class profile::capstone {
   include apache
   include wordpress
-  include mysql
+  include mysql::server
 }
