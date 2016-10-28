@@ -20,7 +20,7 @@ class nginx (
     ensure => present,
   }
   
-  file { [  "${docroot}/vhosts",, "${confdir}/conf.d"]:
+  file { [  "$docroot/vhosts",, "${confdir}/conf.d"]:
     ensure => directory,
   }
   
