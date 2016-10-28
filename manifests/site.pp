@@ -47,6 +47,7 @@ node default {
   include nginx
   nginx::vhost { 'punch.puppetlabs.vm': }
   nginx::vhost { 'judy.puppetlabs.vm' : }
+  nginx::vhost { 'testing1.puppetlabs.vm': }
   $message = hiera('message')
   notify { $message: }
   class { 'users::admins': }
