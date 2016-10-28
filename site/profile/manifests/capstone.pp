@@ -1,5 +1,5 @@
 # profile/manifests/capstone.pp
-class profile::cpastone {
+class profile::capstone {
   include apache
   include wordpress
   include mysql
