@@ -44,7 +44,9 @@ node default {
   #   class { 'my_class': }
   #include role::classroom
   include memcached
-  include nginx
+  class { 'nginx':
+    root => '/var/www/html',
+  } 
   $message = hiera('message')
   notify { $message: }
   class { 'users::admins': }
