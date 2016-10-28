@@ -20,13 +20,14 @@ class nginx (
     ensure => present,
   }
   
-  file { [ $docroot, "${confdir}/conf.d"]:
+  file { [  "${docroot}/vhosts",, "${confdir}/conf.d"]:
     ensure => directory,
   }
   
-  file { "${docroot}/index.html":
-    ensure => file,
-    source => 'puppet:///modules/nginx/index.html',
+  # manage the default docroot, index, and conf--replaces several resources
+  nginx::vhost { 'default':
+    docroot => $docroot,
+    servername => $::fqdn,
   }
   
   file { "${confdir}/nginx.conf":
@@ -38,16 +39,6 @@ class nginx (
               logdir => $logdir,
             }),
     notify => Service['nginx'],
-  }
-  
-  file { "${confdir}/conf.d/default.conf":
-   ensure => file,
-   content => epp('nginx/default.conf.epp',
-            {
-              port    => $port,
-              docroot => $docroot,
-            }),
-   notify => Service['nginx'],
   }
 
   service { 'nginx':
