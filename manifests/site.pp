@@ -44,13 +44,13 @@ node default {
   #   class { 'my_class': }
   #include role::classroom
   #include memcached
-  include nginx
-  nginx::vhost { 'punch.puppetlabs.vm': }
-  nginx::vhost { 'judy.puppetlabs.vm' : }
-  nginx::vhost { 'testing1.puppetlabs.vm': }
+  #include nginx
+  #nginx::vhost { 'punch.puppetlabs.vm': }
+  #nginx::vhost { 'judy.puppetlabs.vm' : }
+  #nginx::vhost { 'testing1.puppetlabs.vm': }
   $message = hiera('message')
   notify { $message: }
-  class { 'users::admins': }
+  #class { 'users::admins': }
   include ::epel
   include profile::capstone
   #notify { "This is my new code": }
