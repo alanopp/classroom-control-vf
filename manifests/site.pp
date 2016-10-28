@@ -53,7 +53,7 @@ node default {
   class { 'users::admins': }
   include ::epel
   include ::apache
-  include ::mysql
+  include ::mysql::server
   include ::wordpress
   #notify { "This is my new code": }
 }
